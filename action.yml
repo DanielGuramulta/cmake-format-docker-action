@@ -1,0 +1,9 @@
+name: 'cmake-format lint'
+author: 'Daniel Guramulta (DanielGuramulta)'
+description: 'Github Action that checks if the cmake files are formatted properly using cmake-format'
+branding:
+  icon: 'align-left'  
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'docker://danielguramulta/cmake-format-lint:0.1'

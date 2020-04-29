@@ -1,5 +1,10 @@
 #!/bin/sh -l
 
+set -e
+
 cd "${GITHUB_WORKSPACE}" || exit
 
-find . \( -name '*.cmake' -o -name 'CMakeLists.txt' \) -exec cmake-format {} \;
+filesBeforeFormat=$(find . \( -name '*.cmake' -o -name 'CMakeLists.txt' \))
+
+find . \( -name '*.cmake' -o -name 'CMakeLists.txt' \) -exec cmake-format --check {} \;
+
